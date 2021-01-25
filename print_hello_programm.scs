@@ -1,0 +1,38 @@
+print_hello_programm
+=> nrel_main_idtf:
+	[Функция для тестирования] (* <- lang_ru;; *);
+	[Test function] (* <- lang_en;; *);
+<- scp_program;
+-> rrel_key_sc_element: _process1;;
+
+print_hello_programm = [*
+_process1 
+_<- scp_process;
+
+_-> rrel_1:: rrel_in:: _number;
+
+_<= nrel_decomposition_of_action:: _... (*
+
+		_-> rrel_1::_..operator_test1
+		(*
+			_<- printNl;;
+            _-> rrel_1:: rrel_fixed:: rrel_scp_const:: [Hello : ];; 		
+	
+		    _=> nrel_goto:: _..proc_print_test_number;;
+		*);;
+
+        _->_..operator_test2
+		(*
+			_<- printNl;;
+            _-> rrel_1:: rrel_fixed:: rrel_scp_const:: _number;; 		
+	
+		    _=> nrel_goto:: _..operator_return;;
+		*);;
+
+        _-> _..operator_return (*
+            _<- return;;
+        *);;
+
+*);;
+
+*];;
